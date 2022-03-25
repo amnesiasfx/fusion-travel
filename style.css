@@ -77,7 +77,7 @@ header {
 .header__inner {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #8694a8;
+    border-bottom: 2px solid #72829e;
 }
 
 header .cta-call {
@@ -190,8 +190,8 @@ header .cta-call {
 .pager input::before {
     position: absolute;
     content: "";
-    width: 1em;
-    height: 1em;
+    width: 0.5em;
+    height: 0.5em;
     background-color: #989898;
     border-radius: 50%;
 
@@ -200,27 +200,35 @@ header .cta-call {
     left: 50%;
 }
 
-.pager input:checked::before {
-    background-color: #faac27;
-    font-size: 1.3em;
-}
-.pager input:checked::after {
-    border-color: #faac27;
-    font-size: 1.3em;
-}
-
 .pager input::after {
     position: absolute;
     content: "";
-    width: 2.1em;
-    height: 2.1em;
+    width: 1.5em;
+    height: 1.5em;
     background-color: transparent;
     border-radius: 50%;
     border: 3px solid #989898;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: box-shadow 0.5s, width 0.5s, height 0.5s;
 }
+
+.pager input:checked::before {
+    background-color: #faac27;
+    font-size: 1.3em;
+    width: 1em;
+    height: 1em;
+}
+.pager input:checked::after {
+    border-color: #faac27;
+    font-size: 1.3em;
+    width: 2em;
+    height: 2em;
+    box-shadow: 0 0 2em 0.02em #999999;
+}
+
+
 
 
 /*
@@ -228,6 +236,10 @@ header .cta-call {
     PAGE PLACES FIND
 
 */
+section.find-page {
+    padding: 2em;
+}
+
 .find-page .content {
     margin: 0 auto;
     max-width: 1080px;
@@ -290,6 +302,7 @@ header .cta-call {
 .page-news {
     padding: 6em 3em;
     text-align: center;
+    display: none;
 }
 
 .page-news .content {
@@ -357,6 +370,132 @@ header .cta-call {
 
 }
 
+/* 
+
+    client review page
+
+*/
+.page-reviews {
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 1em 2em;
+}
+
+.page-reviews .content .title,
+.page-reviews .content .subtitle {
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+.review-media {
+    display: flex;
+    gap: 2em;
+    margin-top: 5em;
+}
+
+.review-media .avatar {
+    border-radius: 0.5em;
+}
+
+
+.review-media__body__name {
+    text-transform: capitalize;
+    color: var(--brand-orange);
+}
+
+.review-media__body__place {
+    text-transform: capitalize;
+    font-size: 0.9em;
+}
+
+
+
+
+/* 
+
+    discount page
+
+*/
+.page-discount {
+    background-color: var(--brand-orange);
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 3em;
+}
+
+.page-discount .title {
+    color: var(--text-color-white);
+    flex-grow: 1;
+    flex-basis: 70%;
+}
+
+.page-discount .container-button {
+    flex-basis: 30%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-discount .cta-button {
+    margin: 0;
+    padding: 1em;
+    border: 3px solid var(--bg-white);
+}
+
+
+
+/* 
+
+    footer
+
+*/
+footer {
+   
+    
+    padding: 5em 3em  1em;
+
+    max-width: 1080px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 3em;
+    margin: 0;
+}
+
+footer .menus {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3em;
+    border-bottom: 1px solid var(--text-color-gray);
+}
+
+footer .title {
+    margin-bottom: 1em;
+}
+
+footer ul {
+    list-style-type: none;
+
+}
+footer ul a {
+    text-decoration: none;
+    color: var(--text-color-gray);
+    padding: 0.3em 0;
+    display: block;
+}
+
+.follow-us img {
+    width: 2em;
+    /* height: 3em; */
+}
+
+.follow-us ul {
+    display: flex;
+    gap: 0.5em;
+}
 
 
 
